@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data-Inventory-Management", "Data-Inventory-Management.csproj", "{27FD4186-3006-49E5-9C86-EBC9476D8341}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data-Inventory-Management", "Data-Inventory-Management.csproj", "{27FD4186-3006-49E5-9C86-EBC9476D8341}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{6C1FAD45-A655-43B0-9A39-16B4C61DBECF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
