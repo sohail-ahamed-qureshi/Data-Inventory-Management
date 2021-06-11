@@ -23,18 +23,26 @@ namespace Data_Inventory_Management
             var jsonOutput = File.ReadAllText(filepath);
             var jObject = JObject.Parse(jsonOutput);
             var inventoryArray = (JArray)jObject["inventories"];
-            if (jObject != null)
+            try
             {
-                Console.WriteLine("Inventories");
-                foreach (var item in inventoryArray)
+                if (jObject != null)
                 {
-                    Console.WriteLine($"Name: {item["name"]}");
-                    Console.WriteLine($"Weight: {item["weight"]}kg(s)");
-                    Console.WriteLine($"price: {item["price"]}.Rs/kg");
-                    GetValue(item["weight"], item["price"]);
-                    Console.WriteLine();
+                    Console.WriteLine("Inventories");
+                    foreach (var item in inventoryArray)
+                    {
+                        Console.WriteLine($"Name: {item["name"]}");
+                        Console.WriteLine($"Weight: {item["weight"]}kg(s)");
+                        Console.WriteLine($"price: {item["price"]}.Rs/kg");
+                        GetValue(item["weight"], item["price"]);
+                        Console.WriteLine();
+                    }
                 }
             }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
         }
         /// <summary>
         /// Calculating value of each inventory.
@@ -46,8 +54,16 @@ namespace Data_Inventory_Management
         {
             int weightConv = weight.ToObject<int>();
             int priceConv = price.ToObject<int>();
-            int totalValue = weightConv * priceConv;
-            Console.WriteLine($"Value of Inventory : {totalValue}.Rs");
+            try
+            {
+                int totalValue = weightConv * priceConv;
+                Console.WriteLine($"Value of Inventory : {totalValue}.Rs");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+           
         }
 
     }
