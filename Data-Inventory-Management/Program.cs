@@ -16,8 +16,8 @@ namespace Data_Inventory_Management
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            Inventory inventory = new Inventory();
-            inventory.GetData();
+            DataInventortyManagement management = new DataInventortyManagement();
+            management.GetData();
 
         }
     }
